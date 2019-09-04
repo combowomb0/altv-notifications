@@ -6,12 +6,13 @@ const notify = {
 };
 
 alt.on('connectionComplete', () => {
-  notify.view = new alt.WebView('http://resources/notify/client/view/index.html');
+  notify.view = new alt.WebView('http://resource/client/view/index.html');
   notify.view.on('notify:loaded', () => {
     notify.isLoaded = true;
   });
 });
 
+//usage example
 alt.on('consoleCommand', (command, ...args) => {
   if(command === 'notify' && notify.isLoaded) {
     const text = args.join(' ');
